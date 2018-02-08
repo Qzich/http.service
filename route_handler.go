@@ -63,6 +63,14 @@ func (routerHandler RouteHandlerFunc) Handle(responseWriter http.ResponseWriter,
 	defer func() {
 		var dumpedRequest []byte
 
+		if request.URL.Path == "/service/info" {
+			return
+		}
+
+		if request.URL.Path == "/health/status" {
+			return
+		}
+
 		dumpedRequest, err = httputil.DumpRequest(request, true)
 
 		logger.Debug(
