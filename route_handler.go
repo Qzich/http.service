@@ -63,11 +63,11 @@ func (routerHandler RouteHandlerFunc) Handle(responseWriter http.ResponseWriter,
 	defer func() {
 		var dumpedRequest []byte
 
-		if request.URL.Path == "/service/info" {
+		if request.URL.Path == "/_service/info" {
 			return
 		}
 
-		if request.URL.Path == "/health/status" {
+		if request.URL.Path == "/_service/status" {
 			return
 		}
 
