@@ -15,7 +15,7 @@ func (controller *ServiceInfoController) Methods() []string {
 }
 
 func (controller *ServiceInfoController) Route() string {
-	return "/service/info"
+	return "/_service/info"
 }
 
 func (controller *ServiceInfoController) Action(responseWriter http.ResponseWriter, request *http.Request) error {

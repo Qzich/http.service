@@ -13,7 +13,7 @@ func (controller *HealthStatusController) Methods() []string {
 }
 
 func (controller *HealthStatusController) Route() string {
-	return "/health/status"
+	return "/_service/status"
 }
 
 func (controller *HealthStatusController) Action(responseWriter http.ResponseWriter, request *http.Request) error {
