@@ -45,7 +45,7 @@ func (routerHandler RouteHandlerFunc) Handle(responseWriter http.ResponseWriter,
 
 	if err = routerHandler(responseRecorder, newRequest); err != nil {
 		if !responseRecorder.wroteHeader {
-			responseRecorder.Code = http.StatusInternalServerError
+			responseRecorder.Code = http.StatusBadRequest
 		}
 	}
 
