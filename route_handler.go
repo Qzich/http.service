@@ -6,6 +6,7 @@ import (
 	"net/http"
 	"net/http/httptest"
 	"net/http/httputil"
+	"strings"
 
 	"github.com/gorilla/mux"
 )
@@ -63,11 +64,7 @@ func (routerHandler RouteHandlerFunc) Handle(responseWriter http.ResponseWriter,
 	defer func() {
 		var dumpedRequest []byte
 
-		if request.URL.Path == "/_service/info" {
-			return
-		}
-
-		if request.URL.Path == "/_service/status" {
+		if strings.Contains(request.URL.Path, "_service") {
 			return
 		}
 
